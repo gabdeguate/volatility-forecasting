@@ -1,0 +1,17 @@
+# Virtual Environment
+quant/
+bin/
+lib/
+include/
+pyvenv.cfg
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data & Notebooks (Optional: if they are huge)
+data/*.csv
+.ipynb_checkpoints/
+
+# Mac files
+.DS_Store
