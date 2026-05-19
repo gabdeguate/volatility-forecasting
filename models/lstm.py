@@ -10,7 +10,8 @@ class LSTMModel(nn.Module):
                             dropout=dropout, 
                             batch_first= True)
         self.output = nn.Linear(in_features=hidden_size, out_features = 1)
-    
+        self.softplus = nn.Softplus()
+        
     def forward(self, x):
         # x shape: (batch_size, seq_len, input_size)
         # return shape: (batch_size, 1)
@@ -18,6 +19,8 @@ class LSTMModel(nn.Module):
         out, _ =  self.lstm(x)
         
         pred = self.output(out[:,-1,:])
+        
+        pred = self.softplus(pred)
         
         return pred
     
