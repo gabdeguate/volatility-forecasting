@@ -20,8 +20,6 @@ class LSTMModel(nn.Module):
         
         pred = self.output(out[:,-1,:])
         
-        pred = self.softplus(pred)
-        
         return pred
     
         
